@@ -55,7 +55,10 @@ But you may use safer HTTPS instead.")
     w3m
     erlang
     workgroups2
-    company-c-headers)
+    company-c-headers
+    font-lock+
+    auto-complete-clang
+    )
   "Don't install any Melpa packages except these packages")
 
 ;; We include the org repository for completeness, but don't use it.
@@ -64,11 +67,11 @@ But you may use safer HTTPS instead.")
       '(;; uncomment below line if you need use GNU ELPA
         ;; ("gnu" . "https://elpa.gnu.org/packages/")
         ;; ("org" . "http://orgmode.org/elpa/") ; latest org-mode
-        ("localelpa" . "~/.emacs.d/localelpa/")
+        ("localelpa" . "~/.emacs.d/localelpa")
         ("my-js2-mode" . "https://raw.githubusercontent.com/redguardtoo/js2-mode/release/")
         ("melpa" . "https://melpa.org/packages/")
         ("melpa-stable" . "https://stable.melpa.org/packages/")))
-
+       
 ;; Un-comment below line if your extract https://github.com/redguardtoo/myelpa/archive/master.zip into ~/myelpa/
 ;; (setq package-archives '(("myelpa" . "~/myelpa")))
 
@@ -171,8 +174,6 @@ But you may use safer HTTPS instead.")
 (require-package 'paredit)
 (require-package 'erlang)
 (require-package 'findr)
-(require-package 'pinyinlib)
-(require-package 'find-by-pinyin-dired)
 (require-package 'jump)
 (require-package 'nvm)
 (require-package 'writeroom-mode)
@@ -246,6 +247,8 @@ But you may use safer HTTPS instead.")
 (require-package 'yasnippet)
 (require-package 'company)
 (require-package 'company-c-headers)
+(require-package 'irony)
+(require-package 'company-irony)
 (require-package 'legalese)
 (require-package 'simple-httpd)
 (require-package 'git-messenger)
@@ -256,5 +259,7 @@ But you may use safer HTTPS instead.")
 (require-package 'quack) ; for scheme
 (require-package 'hydra)
 (require-package 'chinese-pyim)
+(require-package 'auto-complete)
+(ac-config-default)
 
 (provide 'init-elpa)

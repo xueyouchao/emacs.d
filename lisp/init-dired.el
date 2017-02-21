@@ -74,15 +74,17 @@ if no files marked, always operate on current line in dired-mode
      (require 'dired+)
      (setq dired-recursive-deletes 'always)
      (dolist (file `(((if *unix* "zathura" "open") "pdf" "dvi" "pdf.gz" "ps" "eps")
-                     ("7z x" "rar" "zip" "7z") ; "e" to extract, "x" to extract with full path
+                     ("unrar x" "rar")
                      ((if (not *is-a-mac*) (my-guess-mplayer-path) "open")  "ogm" "avi" "mpg" "rmvb" "rm" "flv" "wmv" "mkv" "mp4" "m4v" "webm")
                      ((concat (my-guess-mplayer-path) " -playlist") "list" "pls")
                      ((if *unix* "feh" "open") "gif" "jpeg" "jpg" "tif" "png" )
+                     ("7z x" "7z")
                      ("djview" "djvu")
-                     ("firefox" "xml" "xhtml" "html" "htm" "mht" "epub")))
-       (add-to-list 'dired-guess-shell-alist-user
+                     ("firefox" "xml" "xhtml" "html" "htm" "mht")))
+       (add-to-list 'dired-guess-shell-alist-default
                     (list (concat "\\." (regexp-opt (cdr file) t) "$")
-                          (car file))))))
+                          (car file))))
+     ))
 
 ;; {{ Write backup files to own directory
 ;; @see https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-and-Backup.html

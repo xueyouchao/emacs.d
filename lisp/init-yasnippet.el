@@ -95,7 +95,7 @@
                         "\\n\", "
                         (mapconcat (lambda (i) (format "%s" i)) top-kill-ring ", ")
                         )))
-     (t (setq rlt "")))
+     (t (seq rlt "")))
     rlt))
 
 (add-to-list 'auto-mode-alist '("\\.yasnippet\\'" . snippet-mode))

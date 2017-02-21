@@ -528,7 +528,7 @@ If the character before and after CH is space or tab, CH is NOT slash"
        "xm" 'my-M-x
        "xx" 'er/expand-region
        "xf" 'ido-find-file
-       "xb" 'ivy-switch-buffer-by-pinyin
+       "xb" 'ido-switch-buffer
        "xh" 'mark-whole-buffer
        "xk" 'ido-kill-buffer
        "xs" 'save-buffer
